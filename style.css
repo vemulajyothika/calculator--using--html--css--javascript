@@ -1,0 +1,166 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1e1e2f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+.calculator {
+  width: 60%;
+  max-width: 400px;
+  background: #01040600;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(12, 66, 71, 0.3);
+  margin-top: 20px;
+}
+
+#display {
+  width: 95%;
+  height: 60px;
+  font-size: 24px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #0000009a;
+  color: #fff;
+  text-align: right;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+button {
+  padding: 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background: #4e4e6a;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #64b0ce;
+}
+
+.equal {
+  grid-column: span 2;
+  background-color: #ff5c5c;
+}
+
+.equal:hover {
+  background-color: #ff8080;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 25px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 19px;
+  width: 19px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.history {
+  margin-top: 20px;
+}
+
+.history ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 14px;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+.history li {
+  background: #3b3b57;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  word-wrap: break-word;
+}
+
+body.light {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+body.light .calculator {
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+body.light #display {
+  background-color: #eeeeee;
+  color: black;
+}
+
+body.light button {
+  background-color: #dddddd;
+  color: black;
+}
+
+body.light button:hover {
+  background-color: #13a8ed;
+}
+
+body.light .equal {
+  background-color: #c76025;
+  color: white;
+}
+
+body.light .equal:hover {
+  background-color: #df3f13e1;
+}
